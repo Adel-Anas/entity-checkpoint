@@ -1,0 +1,21 @@
+Entities:
+1. Gymnasium
+   - Attributes: GymnasiumID (unique identifier), Name, Address, TelephoneNumber
+
+2. Member
+   - Attributes: MemberID (unique identifier), LastName, FirstName, Address, DateOfBirth, Gender
+   - Foreign Key: GymnasiumID (to link with the Gymnasium entity)
+
+3. Session
+   - Attributes: SessionID (unique identifier), TypeOfSport, Schedule
+   - Foreign Key: GymnasiumID (to link with the Gymnasium entity)
+
+4. Coach
+   - Attributes: CoachID (unique identifier), LastName, FirstName, Age, Specialty
+   - Foreign Key: SessionID (to link with the Session entity)
+
+Relationships:
+1. Members can register at a Gymnasium, creating a "RegistersAt" relationship.
+2. Sessions take place at a specific Gymnasium, creating a "TakesPlaceAt" relationship.
+3. Coaches lead Sessions, creating a "Leads" relationship.
+4. Sessions can have multiple Coaches, indicating a "MaxTwoCoaches" relationship.
